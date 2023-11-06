@@ -1,18 +1,18 @@
 import { createItems } from '../axiosApiCalls'
 import api from '../axiosApi'
 
-jest.mock('./api')
+jest.mock('../axiosApi')
 
-describe('createSegments', () => {
+describe('createItems', () => {
   afterEach(() => {
     jest.resetAllMocks()
   })
 
   it('should call the API with the correct parameters', async () => {
-    const mockedApiPost = api.post as jest.MockedFunction<typeof api.post>
-    const param1 = 'foo'
-    const param2 = 'bar'
-    const responseData = { success: true }
+    const mockedApiPost = api.post as jest.MockedFunction<typeof api.post>;
+    const param1 = 'foo';
+    const param2 = 'bar';
+    const responseData = { success: true };
 
     // Mock the API response
     mockedApiPost.mockResolvedValueOnce({ data: responseData })
